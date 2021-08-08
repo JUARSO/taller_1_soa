@@ -1,15 +1,14 @@
 Button{
-    margin: 20px !important;
-    width: 200px !important;
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+    margin-left: 25% !important;
+
+    width:50% !important;
     color: white !important;
     background: black !important;
     border-radius: 50px !important;
 }
 
-Input{
-    width: 200px !important;
-    border-radius: 50px !important;
-}
 
 Label{
 }
