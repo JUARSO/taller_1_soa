@@ -1,0 +1,16 @@
+Button{
+    margin: 20px !important;
+    width: 200px !important;
+    color: white !important;
+    background: black !important;
+    border-radius: 50px !important;
+}
+
+Input{
+    width: 200px !important;
+    border-radius: 50px !important;
+}
+
+Label{
+}
+
