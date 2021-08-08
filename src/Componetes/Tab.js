@@ -1,8 +1,22 @@
 import React, { useState } from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import {
+    TabContent,
+    TabPane,
+    Nav,
+    NavItem,
+    NavLink,
+    Card,
+    Button,
+    CardTitle,
+    CardText,
+    Row,
+    Col,
+    FormGroup, Label, Input
+} from 'reactstrap';
 import classnames from 'classnames';
 import Tabla from "./Tabla";
 import './Botones.css'
+import Contenedor from "./Contenedor";
 const Tab = (props) => {
     const [activeTab, setActiveTab] = useState('1');
 
@@ -56,11 +70,20 @@ const Tab = (props) => {
                     <Tabla/>
                 </TabPane>
                 <TabPane tabId="3">
-                    <h4>Tab 3 Contents</h4>
+                    <Contenedor/>
                 </TabPane>
                 <TabPane tabId="4">
-                    <h4>Tab 4 Contents</h4>
-
+                    <div>
+                        <body>
+                        <FormGroup  style={{marginTop: '100px',
+                            background: '', width: '40%', borderRadius: '50px'
+                            , marginLeft: '30%'}}>
+                            <Label for="Placa">Placa</Label>
+                            <Input type="number" name="Placa" id="Placa"/>
+                            <Button>Aceptar</Button>
+                        </FormGroup>
+                        </body>
+                    </div>
                 </TabPane>
             </TabContent>
         </div>

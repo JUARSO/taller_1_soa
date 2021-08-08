@@ -1,3 +1,4 @@
+
 Button{
     margin-top: 25px !important;
     margin-bottom: 25px !important;
@@ -9,7 +10,17 @@ Button{
     border-radius: 50px !important;
 }
 
-
 Label{
+
+    width: 50% !important;
+    margin-left: 25% !important;
 }
 
+Input{
+    width: 50% !important;
+    margin-left: 25% !important;
+}
+
+.clase{
+    background: red !important;
+}
