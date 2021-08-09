@@ -2,36 +2,51 @@ import React from "react";
 import {Table} from "reactstrap";
 
 export default class Tabla extends React.Component{
+    constructor(props) {
+        super(props);
+    }
     render() {
+        let headers;
+        let body;
+        if(this.props.tipo ==='free'){
+            headers = (<tr>
+                            <th>Id</th>
+                            <th>Estado</th>
+                        </tr>)
+            body = this.props.espacios.map(espacio =>{
+                    return (
+                        <tr>
+                            <th scope="row">{espacio.id}</th>
+                            <td>{espacio.estado}</td>
+                        </tr>
+                    ) ;
+                })
+
+        }else if(this.props.tipo ==='in-use'){
+            headers = (<tr>
+                            <th>Id</th>
+                            <th>Estado</th>
+                            <th>Placa</th>
+                            <th>Hora Ingreso</th>
+                        </tr>)
+            body = this.props.espacios.map(espacio =>{
+                return (
+                    <tr>
+                        <th scope="row">{espacio.id}</th>
+                        <td>{espacio.estado}</td>
+                        <td>{espacio.carro.placa}</td>
+                        <td>{espacio.carro.horaIngreso}</td>
+                    </tr>
+                ) ;
+            })
+        }
         return(
             <Table>
                 <thead>
-                <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                </tr>
+                {headers}
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+                {body}
                 </tbody>
             </Table>
         );
